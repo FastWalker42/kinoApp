@@ -17,6 +17,8 @@
       const tg = window.Telegram.WebApp
       tg.expand()
       tg.requestFullscreen()
+      tg.SettingsButton.show()
+      tg.BackButton.hide()
       tg.disableVerticalSwipes()
       document.addEventListener('contextmenu', (event) =>
         event.preventDefault()
