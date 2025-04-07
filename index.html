@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover"
+    />
+
+    <title>Product Card</title>
+    <script defer src="./lib/alpine.js"></script>
+    <script src="./lib/telegram-web-app.js"></script>
+    <script src="./lib/tailwind.js"></script>
+    <script src="https://kinobox.tv/kinobox.min.js"></script>
+
+    <script>
+      const tg = window.Telegram.WebApp
+      tg.expand()
+      tg.disableVerticalSwipes()
+      document.addEventListener('contextmenu', (event) =>
+        event.preventDefault()
+      )
+    </script>
+  </head>
+
+  <body
+    x-data="{}"
+    class="bg-gray-100 flex items-center justify-center min-h-screen dark:bg-gray-800 dark:text-white"
+  >
+    <div
+      class="kinobox_player"
+      style="width: 100vw; height: 100vh"
+    ></div>
+    <script>
+      kbox('.kinobox_player', {
+        search: { query: '463897' },
+      })
+    </script>
+  </body>
+</html>
